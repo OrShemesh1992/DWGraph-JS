@@ -1,4 +1,4 @@
-class Vertex{
+export default class Vertex{
     #key;
     #pos;
     weight;
@@ -24,19 +24,19 @@ class Vertex{
         this.#pos=pos;
     }
 
-    toString = function() {
-        return "Key: " +  this.getId() + " Point: " +  this.getPos() ;
-      }
+    // toString = function() {
+    //     return "Key: " +  this.getId() + " Point: " +  this.getPos() ;
+    //   }
 
 }
 
-const v1 = new Vertex(1,[1,2]);
-const v2 = new Vertex(3);
+// const v1 = new Vertex(1,[1,2]);
+// const v2 = new Vertex(3);
 
-console.log(""+v1);
+// console.log(""+v1);
 
-console.log(""+v2);
+// console.log(""+v2);
 
-v2.setPos([5,5]);
+// v2.setPos([5,5]);
 
-console.log(""+v2);
+// console.log(""+v2);

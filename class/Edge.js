@@ -1,4 +1,4 @@
-class Edge{
+export default class Edge{
     #src;
     #dest;
     #weight;
@@ -29,6 +29,6 @@ class Edge{
 }
 
 
-const e = new Edge(1,2,5.3);
+// const e = new Edge(1,2,5.3);
 
-console.log(""+e);
+// console.log(""+e);
