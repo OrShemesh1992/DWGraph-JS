@@ -24,9 +24,9 @@ export default class Vertex{
         this.#pos=pos;
     }
 
-    // toString = function() {
-    //     return "Key: " +  this.getId() + " Point: " +  this.getPos() ;
-    //   }
+    toString = function() {
+        return "Key: " +  this.getId() + " Point: " +  this.getPos() ;
+      }
 
 }
 

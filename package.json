@@ -8,5 +8,9 @@
   },
   "author": "",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@datastructures-js/priority-queue": "^5.1.1",
+    "priorityqueue": "^1.0.0"
+  }
 }

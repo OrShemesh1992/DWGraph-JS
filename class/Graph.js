@@ -3,7 +3,7 @@
  import Vertex from './Vertex.js';
 
 
-class Graph {
+ export default class Graph {
      #Edges ; 
      #Vertexs ; 
      #mc;
@@ -61,7 +61,31 @@ class Graph {
          }
      }
 
+     remove_vertex(id){
+         if(id in this.#Vertexs){
 
+            for(var key in this.#Edges){
+                if(id in this.#Edges[key]){
+                    delete this.#Edges[key][id]; 
+                    this.#mc++;
+                    this.#size_edge--;
+                }
+            }
+
+
+            for(var key in this.#Edges[id]){
+                delete this.#Edges[id][key];
+                this.#mc++;
+                this.#size_edge--;
+            }
+
+            delete this.#Vertexs[id];
+            this.#mc++;
+            return true;
+         }else{
+             return false;
+         }
+     }
      remove_edge(id1,id2){
         if(id1!==id2 && id1 in this.#Vertexs && id2 in this.#Vertexs && id2 in this.#Edges[id1]){
            delete this.#Edges[id1][id2];
@@ -76,27 +100,47 @@ class Graph {
 
 
 
+// const g = new Graph();
+
+// g.add_vertex(1);
+// g.add_vertex(2);
+// g.add_vertex(3);
+// g.add_vertex(4);
+// g.add_vertex(5);
+
+// g.add_edge(1,2,2);
+// g.add_edge(2,3,3);
+// g.add_edge(3,4,4);
+// g.add_edge(4,5,5);
+// g.add_edge(5,1,6);
+
+// console.log(g.get_all_edge(1)[2]);
+//  const e = new Edge(1,2,5.3);
+//  const v = new Vertex(1);
+// console.log(e);
+// console.log(v);
+
+//  const g = new Graph();
+// console.log("vertex:",g.Vertex_size());
+// g.add_vertex(1);
+// console.log("vertex:",g.Vertex_size());
+// console.log("mc:",g.get_mc());
+
+// console.log(g.get_all_vertex()[1].getId());
 
 
-// const e = new Edge(1,2,5.3);
-// const v = new Vertex(1);
-// console.log(""+e);
-// console.log(""+v);
+// console.log(g.add_edge(1,2,8));
+// g.add_vertex(2);
 
-const g = new Graph();
-console.log("vertex:",g.Vertex_size());
-g.add_vertex(1);
-console.log("vertex:",g.Vertex_size());
-console.log("mc:",g.get_mc());
+//  console.log(g.add_edge(1,2,8));
 
-console.log(g.get_all_vertex()[1].getId());
-
-
-console.log(g.add_edge(1,2,8));
-g.add_vertex(2);
-
- console.log(g.add_edge(1,2,8));
- console.log(g.Vertex_size());
-
- console.log(g.remove_edge(1,2));
+//  console.log(g.add_edge(2,1,8));
+//  console.log("size v ",g.Vertex_size());
+//  console.log("size e ",g.edge_size());
+//  console.log("size mc ",g.get_mc());
+// g.remove_vertex(2);
+// console.log("size v ",g.Vertex_size());
+// console.log("size e ",g.edge_size());
+// console.log("size mc ",g.get_mc());
+//  console.log(g.remove_edge(1,2));
 
